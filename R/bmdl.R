@@ -136,6 +136,10 @@ bmdl.mean.shift = function(X, month = NULL, meta = NULL, iter = 1e4,
   	  month = rep(1:12, ceiling(N / 12))[1:N];
   	period = 12;
   }
+  if(type == 'daily'){
+  	  month = rep(1:7, ceiling(N / 7))[1:N];
+  	period = 7;
+  }
   inference = bmdl.eta(X, month, eta, meta, p, fit, penalty, nu, a, b1, b2, period);
   current = list(eta = eta, inference = inference, change.eta = TRUE);
   mcmc[1, ] = map200[1, ] = unlist(current)[1 : (N + p + 2)];
