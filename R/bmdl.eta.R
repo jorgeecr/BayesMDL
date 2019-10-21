@@ -20,7 +20,7 @@
 ## a: default value 1
 ## b1: for non-metadata, dafault value 239 (for monthly data)
 ## b2: for metadata, dafault value 47 (for monthly data)
-## period = 12 (for monthly data), or 1 (for annual data)
+## period = 12 (for monthly data), 1 (for annual data), or 7 (for daily data)
 
 ###### Outputs:
 ## mdl: Bayesian mdl score for model eta (i.e., lpost)
