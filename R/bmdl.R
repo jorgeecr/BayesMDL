@@ -90,7 +90,7 @@
 #'
 
 bmdl.mean.shift = function(X, month = NULL, meta = NULL, iter = 1e4,
-                           thin = max(1, iter / 1e3), type = 'monthly', p = 3,
+                           thin = max(1, iter / 1e3), type = 'daily', p = 3,
                            fit = 'marlik', penalty = 'bmdl', nu = 5, a = 1,
                            b1 = 19 * (type == 'annual') + 239 * (type == 'monthly'),
                            b2 = (b1 - 4) / 5, start.eta = NULL, track.time = TRUE,
