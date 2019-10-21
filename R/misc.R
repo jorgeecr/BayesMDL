@@ -27,8 +27,8 @@ harmonic_lm = function(x, k = 3, time_ind = NULL, intercept = TRUE,
 
   ## Design matrix
   if(k > 0){
-    design_sin = outer(time_ind, 1:k, function(t, k){sin(2 * pi / 12 * t * k)});
-    design_cos = outer(time_ind, 1:k, function(t, k){cos(2 * pi / 12 * t * k)});
+    design_sin = outer(time_ind, 1:k, function(t, k){sin(2 * pi / 7 * t * k)});
+    design_cos = outer(time_ind, 1:k, function(t, k){cos(2 * pi / 7 * t * k)});
     design = data.frame(design_sin, design_cos);
     names(design) = c(paste0('sin', 1:k), paste0('cos', 1:k));
 
@@ -76,7 +76,7 @@ loc2dirac = function(loc, N){
 #' @return
 #' \item{D}{A \code{n} by \code{(2*m-1)} matrix. The first \code{m}
 #'   columns are for regime means; they are 0/1 indicators for regimes from 2 to
-#'   \code{m}. The next \code{(m+1)} columns are for trends.}
+#'   \code{m}. The next \code{(m-1)} columns are for trends.}
 #' \item{seg_lengths}{A vector of length \code{m}, regime lengths, including
 #'   the first regime. }
 #'
